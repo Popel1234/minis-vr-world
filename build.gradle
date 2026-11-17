@@ -1,0 +1,28 @@
+plugins {
+    id 'fabric-loom' version '1.9-SNAPSHOT'
+}
+
+version = project.mod_version
+group = 'dev.miko'
+base { archivesName = 'minis-vr-world' }
+
+repositories {
+    exclusiveContent {
+        forRepository { maven { name = "Modrinth"; url = "https://api.modrinth.com/maven" } }
+        filter { includeGroup "maven.modrinth" }
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    // MCEF 2.1.6 (Chromium in Minecraft), Fabric 1.21.4
+    modImplementation "maven.modrinth:TObQ0HxZ:eKfSnJUQ"
+    // Bundle MCEF inside our jar (Jar-in-Jar) so players don't have to install it separately
+    include "maven.modrinth:TObQ0HxZ:eKfSnJUQ"
+}
+
+tasks.withType(JavaCompile).configureEach { options.release = 21 }
+java { sourceCompatibility = JavaVersion.VERSION_21; targetCompatibility = JavaVersion.VERSION_21 }

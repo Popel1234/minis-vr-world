@@ -1,0 +1,3 @@
+This mod bundles MCEF (Minecraft Chromium Embedded Framework) 2.1.6-1.21.4 as a separate nested jar
+(META-INF/jars). MCEF is licensed under the GNU LGPL v2.1: https://github.com/CinemaMod/mcef
+Chromium binaries are downloaded by MCEF at first launch.

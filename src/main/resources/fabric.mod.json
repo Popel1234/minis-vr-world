@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "vrscreen",
+  "version": "${version}",
+  "name": "Minis VR World",
+  "description": "Put on a VR headset and watch YouTube, Shorts, Twitch and TikTok inside Minecraft.",
+  "environment": "client",
+  "entrypoints": { "client": ["dev.miko.vrscreen.VRScreenClient"] },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
